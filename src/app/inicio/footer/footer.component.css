@@ -1,0 +1,11 @@
+mat-toolbar{
+    background: rgb(13, 37, 35);
+    color: rgb(196, 188, 236);
+  }
+
+  a{
+      color: rgb(196, 188, 236);
+      text-decoration: none;
+      margin-left: 15px;
+      display: inline-flex;
+  }

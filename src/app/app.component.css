@@ -1,0 +1,51 @@
+#toolbar{
+    background: rgb(24, 75, 71);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#imagem-principal{
+    width: 100%;
+    height: 80%;
+    background: url(/assets/imgInicial.jpg) no-repeat;
+    background-size: cover;
+}
+
+#btnPrincipal{
+    position: absolute;
+    width: 30%;
+    height: 15%;
+    margin-top: -150px;
+    margin-left: 470px;
+    color:white;
+    border: 3px solid white;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(45, 42, 58);
+    margin-top: 30px;
+}
+ ul{
+     display: inline-flex;
+     list-style: none;
+ }
+
+ li{
+     width: 30%;
+     height: 30%;
+     padding: 20px;
+ }
+
+ .img{
+     width: 100%;
+     height: 100%;
+ }

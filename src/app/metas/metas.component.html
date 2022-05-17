@@ -1,0 +1,72 @@
+<section id="gridPrincipal">
+    <div class="container">
+
+      <!-- Editando Metas-->
+        <div>
+          <div class="formHeader">
+            <p>Metas</p>
+            <p class="subTitle">Aqui poderá determinar metas que deseja alcançar</p>
+          </div>
+            <mat-card class="item">
+               <mat-card-header >
+               </mat-card-header>
+               <form>
+                <mat-card-content>
+  
+                  <!--Nome-->
+                  <mat-form-field class="fieldMedio">
+                    <mat-label>Nome</mat-label>
+                    <input matInput type="text" name="nome" [(ngModel)]="meta.nome"> 
+                  </mat-form-field>
+
+                  <!--Data-->
+                  <mat-form-field class="fieldMedio">
+                    <mat-label>Data</mat-label>
+                    <input matInput type="date" name="calendario"  [(ngModel)]="meta.calendario">
+                  </mat-form-field>
+
+                  <!--Descrição-->
+                  <mat-form-field class="fieldGrande">
+                    <mat-label>Descrição da Metas</mat-label>
+                    <textarea matInput placeholder="Ex: Vender R$ 10.000 de um determinado produto" name="desc" [(ngModel)]="meta.desc"></textarea>
+                  </mat-form-field>
+               </mat-card-content>
+
+               <!--botão Salvar e Limpar-->
+               <mat-card-footer>
+                <button type="reset" class="btnLimpar" mat-raised-button>Limpar</button>
+                 <button class="btnSalvar" mat-raised-button (click)="salvar()">Salvar</button>
+               </mat-card-footer>
+               </form>
+            </mat-card>
+        </div>  
+
+        <!--Card visualização, edição e remover de metas cadastradas-->
+        <div>
+            <mat-card class="cardCadastrados item">
+                <mat-card-header>
+                    <mat-card-title class="cadastradosTitle">Cadastrados
+                      <button mat-raised-button matTooltip="Para ver os detalhes da meta apenas clique em seu nome"  class="btnSimples">
+                        <mat-icon class="material-icons-outlined" id="icon" class="iconHelp">
+                          info_outline
+                        </mat-icon>
+                      </button>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                      <mat-list *ngFor="let meta of metas">
+                        <mat-list-item>
+                          <button mat-raised-button routerLink="/metas/metas-detalhes/{{meta.id}}">{{meta.nome}}</button>
+                          <button class="btnEditar" mat-raised-button (click)="editarMeta(meta.id)">Editar</button>
+                          <button class="excluir" mat-raised-button (click)="removerMeta(meta.id)">
+                            <mat-icon class="material-icons-outlined" id="icon">
+                              delete_forever
+                            </mat-icon>
+                          </button>
+                        </mat-list-item>
+                      </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,78 @@
+<section id="gridPrincipal">
+    <div class="container">
+
+        <!--Editando Produtos-->
+        <div>
+          <div class="formHeader">
+            <p>Adicione Produtos</p>
+            <p class="subTitle">Aqui poderá adicionar uma mergem de lucro para cada produto que desejar</p>
+          </div>
+            <mat-card class="item">
+               <mat-card-header >
+               </mat-card-header>
+               <form>
+                <mat-card-content>
+        
+                  <!--Nome-->
+                  <mat-form-field class="fieldGrande">
+                    <mat-label>Nome Produto</mat-label>
+                    <input matInput type="text" name="nome" [(ngModel)]="produto.nome">
+                  </mat-form-field>
+
+                  <!--Preço Fabricação-->
+                  <mat-form-field class="fieldMedio">
+                    <mat-label>Preço de Fabricação</mat-label>
+                    <input matInput type="number" name="preco_fabrica" [(ngModel)]="produto.preco_fabrica">
+                  </mat-form-field>
+
+                  <!--Margem Lucro-->
+                  <mat-form-field class="fieldMedio">
+                    <mat-label>Margem de Lucro, porcentos</mat-label>
+                    <input matInput type="number" name="margem_lucro" [(ngModel)]="produto.margem_lucro">
+                  </mat-form-field>
+
+                  <!--Descrição-->
+                  <mat-form-field class="fieldGrande">
+                    <mat-label>Descrição do Produto</mat-label>
+                    <textarea matInput name="desc" [(ngModel)]="produto.desc"></textarea>
+                  </mat-form-field>
+
+                  <!--Preço Final-->
+                  <button (click)="conta()">Calcular</button>
+                    <mat-label>Preço Final</mat-label>
+                    <p>{{result}}</p>
+                  
+               
+                  <!--Botão Salvar e Limpar-->
+               </mat-card-content>
+              </form>
+               <mat-card-footer>
+                <button type="reset" class="btnLimpar" mat-raised-button >Limpar</button>
+                 <button class="btnSalvar" mat-raised-button (click)="salvar()">Salvar</button>
+               </mat-card-footer>
+            </mat-card>
+        </div>  
+
+        <!--Card visualizar produtos, editar e remover cardastrados-->
+        <div>
+            <mat-card class="cardCadastrados item">
+                <mat-card-header>
+                    <mat-card-title class="cadastradosTitle">Cadastrados</mat-card-title>
+                </mat-card-header>
+                <mat-card-content >
+                    <mat-list *ngFor="let produto of produtos">
+                      <mat-list-item>
+                        <button mat-raised-button routerLink="/produtos/produtos-detalhes/{{produto.id}}">{{produto.nome}}</button>
+                        <button class="btnEditar" mat-raised-button (click)="editarProdutos(produto.id)">Editar</button>
+                        <button class="excluir" mat-raised-button (click)="removerProduto(produto.id)">
+                          <mat-icon class="material-icons-outlined" id="icon">
+                            delete_forever
+                          </mat-icon>
+                        </button>
+                      </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</section>

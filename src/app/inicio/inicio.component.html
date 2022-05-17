@@ -1,0 +1,71 @@
+<mat-toolbar id="toolbar">
+   <span>Bem Vindo ao Soma +</span>
+   <span class="spacer"></span>
+   <button mat-button [matMenuTriggerFor]="ajuda">
+       Ajuda
+   </button>
+   <mat-menu #ajuda="matMenu">
+    <button mat-menu-item>Entre em contato</button>
+    <button mat-menu-item>Perguntas</button>
+  </mat-menu>
+ </mat-toolbar>
+
+<section id="imagem-principal"></section>
+<button mat-stroked-button id="btnPrincipal" routerLink="/geral">Participe agora</button>
+
+<section>
+  <div>
+    <h1>Por que usar ?</h1>
+  </div>
+</section>
+
+<section>
+  <ul>
+    <li>
+      <mat-card class="cards">
+        <img mat-card-image src="assets/imgPratico.png">
+        <mat-card-header>
+          <mat-card-title>Prático</mat-card-title>
+          <mat-card-subtitle>Praticidade é tudo</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            O Soma traz uma linguagem de fácil entendimento, deixando de lado uma metodologia complicada.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </li>
+    <li>
+      <mat-card class="cards">
+        <img mat-card-image src="assets/imgProdutivo.png">
+        <mat-card-header>
+          <mat-card-title>Produtivo</mat-card-title>
+          <mat-card-subtitle>Ganhar mais</mat-card-subtitle>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <p>
+            A praticidade traz produtividade, menos trabalho mais ganhos.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </li>
+    <li>
+      <mat-card class="cards">
+        <img mat-card-image src="assets/imgOrganização.png">
+        <mat-card-header>
+          <mat-card-title>Organização</mat-card-title>
+          <mat-card-subtitle>Organização é a alma do negócio !</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            O soma traz para seu negocio a organização de produtos e fluxo de caixa.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </li>
+  </ul>
+</section>
+
+<app-footer></app-footer>
+

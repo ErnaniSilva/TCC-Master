@@ -1,0 +1,15 @@
+<mat-toolbar>
+    <div>
+        ErnaniCompany &copy;
+
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Google</a>
+
+        <button mat-button [matMenuTriggerFor]="aboveMenu">Ajuda</button>
+        <mat-menu #aboveMenu="matMenu" yPosition="above">
+             <p >Caso você precise de ajuda com nosso site, 
+                 não entre em contado, pois não irei resolver seus problemas</p>
+        </mat-menu>
+    </div>
+  </mat-toolbar>

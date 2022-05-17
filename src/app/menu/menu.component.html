@@ -1,0 +1,127 @@
+<!--Menu-->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport 
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar id="titleMenu"> <img src="../../assets/escudoSoma.jpg" alt="simboloSoma" id="iconSoma"> Soma</mat-toolbar>
+    <!--Geral-->
+    <mat-nav-list id="lista">
+      <a mat-list-item routerLink="/geral" routerLinkActive="active" class="itemLista">
+          <mat-icon class="material-icons-outlined" id="icon">
+            dashboard
+          </mat-icon>
+          Geral
+      </a>
+      <!--Perfil-->
+      <a mat-list-item routerLink="/Perfil" routerLinkActive="active" class="itemLista">
+          <mat-icon class="material-icons-outlined" id="icon">
+            person
+          </mat-icon>
+        Perfil
+      </a>
+      <!--Finanças-->
+      <a mat-list-item routerLink="/financas" routerLinkActive="active" class="itemLista">
+        <mat-icon class="material-icons-outlined" id="icon">
+          paid
+        </mat-icon>
+      Finanças
+    </a>
+    <!--Produtos-->
+      <a mat-list-item routerLink="/produtos" routerLinkActive="active" class="itemLista">
+          <mat-icon class="material-icons-outlined" id="icon">
+            view_in_ar
+          </mat-icon>
+        Produtos
+      </a>
+      <!--Metas-->
+      <a mat-list-item routerLink="/metas" routerLinkActive="active" class="itemLista">
+          <mat-icon class="material-icons-outlined" id="icon">
+            done_all
+          </mat-icon>
+        Metas
+      </a>
+      <!--Lembretes-->
+      <a mat-list-item routerLink="/lembretes" routerLinkActive="active" class="itemLista">
+          <mat-icon class="material-icons-outlined" id="icon">
+            preview
+          </mat-icon>
+        Lembretes
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <!--sidenav com barra de pesquisa e botões ajuda e perfil-->
+  <mat-sidenav-content id="sidenavAdjacente">
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <mat-form-field class="form-field">
+        <input matInput type="text" placeholder="Pesquise parcerias ">
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <button id="search">
+        <mat-icon class="material-icons-outlined">search</mat-icon>
+      </button>
+
+      <!--Botão Ajuda-->
+      <button [matMenuTriggerFor]="beforeConfig" id="btnViewAjuda" >
+        <mat-icon class="material-icons-outlined">
+          settings
+        </mat-icon>
+      </button>
+        <mat-menu #beforeConfig="matMenu" xPosition="before">
+          <mat-card>
+            <mat-list>
+              <mat-list-item>Precisa de ajuda ?</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>Não poderemos ajudar</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>Não estou com vontade</mat-list-item>
+            </mat-list>
+          </mat-card>
+        </mat-menu>
+
+        <!--Botão visualização perfil-->
+      <button [matMenuTriggerFor]="beforeMenu" id="btnViewPerfil">
+        <mat-icon class="material-icons-outlined">
+          person
+        </mat-icon>
+      </button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+              bred for hunting.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button routerLink="/Perfil">Editar</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-menu>
+    </mat-toolbar>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+  
+

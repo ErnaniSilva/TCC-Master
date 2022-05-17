@@ -1,0 +1,30 @@
+
+
+
+<section id="gridPrincipal">
+    <div class="container">
+
+      <!--Detalhe Lembrete-->
+        <div>
+          <div class="formHeader">
+            <p>Detalhes</p>
+            <p class="subTitle">Aqui poderá visualizar mais informações</p>
+          </div>
+            <mat-card  class="item">
+               <mat-card-header >
+               </mat-card-header>
+               <form>
+                <mat-card-content class="content">
+
+                    <label><p class="titles">Nome: </p> <p class="subtitles">{{meta.nome}}</p></label> <br>
+                    <label><p class="titles">Calendario: </p> <p class="subtitles">{{meta.calendario}}</p></label> <br>
+                    <label><p class="titles">Descrição: </p> <p class="subtitles">{{meta.desc}}</p></label> <br>
+               
+                  <!--Voltar-->
+                </mat-card-content> 
+               <mat-card-footer>
+                 <button class="btnVoltar" mat-raised-button routerLink="/metas">Voltar</button>
+               </mat-card-footer>
+               </form>
+            </mat-card>
+        </div> 

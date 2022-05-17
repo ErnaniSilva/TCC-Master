@@ -1,0 +1,128 @@
+<section id="gridPrincipal">
+    <div class="container">
+      <!--Editando Perfil-->
+        <div>
+          <div class="formHeader">
+            <p>Editar Perfil</p>
+            <p class="subTitle">Atualize suar informações</p>
+          </div>
+            <mat-card class="item">
+               <mat-card-header >
+               </mat-card-header>
+               <form>
+                <mat-card-content>
+
+                  <!--Nome Empresa-->
+                  <mat-form-field class="fieldMedio">
+                    <mat-label>Nome da Empresa</mat-label>
+                    <input matInput type="text">
+                  </mat-form-field>
+
+                  <!--Email-->
+                  <mat-form-field class="fieldMedio">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" placeholder="Example@gmail.com">
+                  </mat-form-field>
+
+                  <!--Nome Pessoa-->
+                  <mat-form-field class="fieldMedio">
+                    <mat-label>Primeiro Nome</mat-label>
+                    <input matInput type="text">
+                  </mat-form-field>
+
+                  <!--Nome Pessoa-->
+                  <mat-form-field class="fieldMedio">
+                    <mat-label>Ultimo Nome</mat-label>
+                    <input matInput type="text">
+                  </mat-form-field>
+
+                  <!--Endereço-->
+                  <mat-form-field class="fieldGrande">
+                    <mat-label>Endenreço</mat-label>
+                    <input matInput type="text" placeholder="Nome da Rua">
+                  </mat-form-field>
+
+                  <!--Cidade-->
+                  <mat-form-field class="fieldPequeno">
+                    <mat-label>Cidade</mat-label>
+                    <input matInput type="text">
+                  </mat-form-field>
+                  
+                  <!--Estados-->
+                  <mat-form-field class="fieldPequeno">
+                    <mat-label>Estado</mat-label>
+                    <mat-select>
+                      <mat-option value="acre">Acre</mat-option>
+                      <mat-option value="alagoas">Alagoas</mat-option>
+                      <mat-option value="amapa">Amapá</mat-option>
+                      <mat-option value="amazonas">Amazonas</mat-option>
+                      <mat-option value="bahia">Bahia</mat-option>
+                      <mat-option value="ceara">Ceará</mat-option>
+                      <mat-option value="espirito-santo">Espírito Santo</mat-option>
+                      <mat-option value="goias">Goiás</mat-option>
+                      <mat-option value="maranhao">Maranhão</mat-option>
+                      <mat-option value="mato-grosso">Mato Grosso</mat-option>
+                      <mat-option value="mato-grosso-do-sul">Mato Grosso do Sul</mat-option>
+                      <mat-option value="minas-gerais">Minas Gerais</mat-option>
+                      <mat-option value="para">Pará</mat-option>
+                      <mat-option value="paraiba">Paraíba</mat-option>
+                      <mat-option value="pernambuco">Pernambuco</mat-option>
+                      <mat-option value="piaui">Piauí</mat-option>
+                      <mat-option value="rio-de-janeiro">Rio de Janeiro</mat-option>
+                      <mat-option value="rio-grande-do-norte">Rio Grande do Norte</mat-option>
+                      <mat-option value="rio-grande-do-sul">Rio Grande do Sul</mat-option>
+                      <mat-option value="rondonio">Rondônio</mat-option>
+                      <mat-option value="roraima">Roraima</mat-option>
+                      <mat-option value="santa-catarina">Santa Catarina</mat-option>
+                      <mat-option value="sao paulo">São Paulo</mat-option>
+                      <mat-option value="sergipe">Sergipe</mat-option>
+                      <mat-option value="tocantins">Tocantins</mat-option>
+                      <mat-option value="distrito-federal">Distrito Federal</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <!--CEP-->
+                  <mat-form-field class="fieldPequeno">
+                    <mat-label>CEP</mat-label>
+                    <input matInput type="number">
+                  </mat-form-field>
+
+                  <!--Descrição Empresa-->
+                  <mat-form-field class="fieldGrande">
+                    <mat-label>Descrição da Empresa</mat-label>
+                   <textarea matInput placeholder="Empresa de artesanato, fabricamos bonecas de pano e etc"></textarea>
+                  </mat-form-field>
+               </mat-card-content>
+
+               <!--botão Salvar e Limpar-->
+               <mat-card-footer>
+                <button type="reset" class="btnLimpar" mat-raised-button>Limpar</button>
+                 <button class="btnSalvar" mat-raised-button>Salvar</button>
+               </mat-card-footer>
+               </form>
+            </mat-card>
+        </div>  
+
+        <!--Card Perfil-->
+        <div>
+            <mat-card class="example-card item">
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-header class="card-header">
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</section>

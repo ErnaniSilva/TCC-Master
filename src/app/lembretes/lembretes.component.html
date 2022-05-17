@@ -1,0 +1,83 @@
+<section id="gridPrincipal">
+    <div class="container">
+
+      <!--Editando Lembretres-->
+        <div>
+          <div class="formHeader">
+            <p>Lembretes</p>
+            <p class="subTitle">Aqui poderá adicionar avisos sobre eventos importantes</p>
+          </div>
+            <mat-card  class="item">
+               <mat-card-header >
+               </mat-card-header>
+               <form>
+                <mat-card-content>
+  
+                  <!--Nome-->
+                  <mat-form-field class="fieldGrande">
+                    <mat-label>Nome</mat-label>
+                    <input matInput type="text" name="nome" [(ngModel)]="lembrete.nome">
+                  </mat-form-field>
+
+                   <!--Importancia-->
+                  <section class="sectionImpo">
+                    <p>Importância</p>
+                    <input type="radio" name="importacia" value="baixa" [(ngModel)]="lembrete.importancia">
+                    <label for="baixa"  class="labelImpor">Baixa</label>
+                    <input type="radio" name="importacia" value="media" [(ngModel)]="lembrete.importancia">
+                    <label for="media" class="labelImpor">Media</label>
+                    <input type="radio" name="importacia" value="alta" [(ngModel)]="lembrete.importancia">
+                    <label for="alta" class="labelImpor">Alta</label>
+                  </section>
+
+                    <!--Data-->
+                    <mat-form-field class="fieldMedio">
+                      <mat-label>Data</mat-label>
+                      <input matInput type="date" name="calendario" [(ngModel)]="lembrete.calendario">
+                    </mat-form-field>
+
+                  <!--Descrição-->
+                  <mat-form-field class="fieldGrande">
+                    <mat-label>Descrição do Lembrete</mat-label>
+                    <textarea matInput placeholder="Ex: boleto para pagar, compromisso com fornecedor" name="desc" [(ngModel)]="lembrete.desc"></textarea>
+                  </mat-form-field>
+
+               
+                  <!--Botão Salvar e Limpar-->
+               </mat-card-content>
+               <mat-card-footer>
+                <button type="reset" class="btnLimpar" mat-raised-button>Limpar</button>
+                 <button class="btnSalvar" mat-raised-button (click)="salvar()">Salvar</button>
+               </mat-card-footer>
+               </form>
+            </mat-card>
+        </div>  
+
+        <!--Card visualização de Lembretes-->
+        <div>
+            <mat-card class="cardCadastrados item">
+                <mat-card-header>
+                    <mat-card-title class="cadastradosTitle">Cadastrados</mat-card-title>
+                    <button mat-raised-button matTooltip="Para ver os detalhes do lembrete basta clicar em seu nome"  class="btnSimples">
+                      <mat-icon class="material-icons-outlined" id="icon" class="iconHelp">
+                        info_outline
+                      </mat-icon>
+                    </button>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-list *ngFor="let lembrete of lembretes">
+                          <mat-list-item>
+                            <button mat-raised-button routerLink="/lembretes/lembretes-detalhes/{{lembrete.id}}">{{lembrete.nome}}</button>
+                            <button class="btnEditar" mat-raised-button (click)="editarLembrete(lembrete.id)">Editar</button>
+                            <button class="excluir" mat-raised-button (click)="removerLembrete(lembrete.id)">
+                              <mat-icon class="material-icons-outlined" id="icon">
+                                delete_forever
+                              </mat-icon>
+                            </button>
+                          </mat-list-item>
+                      </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</section>
